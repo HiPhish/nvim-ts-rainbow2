@@ -42,6 +42,7 @@ local function update_range(bufnr, changes, tree, lang)
 	if vim.fn.pumvisible() ~= 0 or not lang then return end
 
 	local query = lib.get_query(lang)
+	if not query then return end
 	local matches = Stack.new()
 
 	for _, change in ipairs(changes) do
