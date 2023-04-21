@@ -1,9 +1,10 @@
+module main
+
 import term { colorize }
 
 struct Thing {
 	name   string
-	source ReleaseSource
-	locked []LockType
+	locked []string
 }
 
 enum ReleaseSource {
@@ -18,26 +19,45 @@ const (
 	b = 'b'
 )
 
-fn update() ! {
-	mut seen := map[string]bool{}
-	mut mp := map[string]{}
-	mut things := []ThingType{}
+fn main() {
+	run()
+}
 
-	outer: for k, v in glob_things {
-		match k {
+fn run() {
+	res_things := get_things()
+	mut seen := map[string]bool{}
+	mut things := []string{}
+
+	outer: for t in res_things {
+		s := match t {
 			string {
-				things << k
+				t
 			}
 			Thing {
-				for l in v.locked {
-					name := if l is Locked { l.name } else { l as string }
-					if v.name == name {
-						continue outer
+				for l in t.locked {
+					if false {
+						eprintln(l)
+						break outer
 					}
 				}
-				things << k
+				t.name
 			}
 		}
+		if !seen[s] {
+			things << s
+		}
 	}
-	println(colorize(term.bold, 'DO UPDATE'))
+
+	println(colorize(term.bold, 'THINGS ${things}'))
+}
+
+fn get_things() []ThingType {
+	t := Thing{
+		name: 'Mr. Foo'
+	}
+	mut res := []ThingType{}
+	res << a
+	res << t
+
+	return res
 }
