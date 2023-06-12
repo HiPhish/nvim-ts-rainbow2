@@ -2,18 +2,39 @@
 ;;; self-closing tags or opening tags without closing tag.
 
 (element
-  (start_tag (tag_name) @opening)
+  (start_tag
+    "<" @opening.0
+    (tag_name) @opening.1
+    ">" @opening.2)
   ; (element (self_closing_tag) @intermediate)*
-  (end_tag (tag_name) @closing)) @container
+  (end_tag
+    "</" @closing.0
+    (tag_name) @closing.1
+    ">" @closing.2)) @container
 
 (element
-  (self_closing_tag (tag_name) @opening)) @container
+  (self_closing_tag
+    "<" @opening.0
+    (tag_name) @opening.1
+    "/>" @opening.2)
+  ) @container
 
 (style_element
-  (start_tag (tag_name) @opening)
-  ; (element (self_closing_tag) @intermediate)*
-  (end_tag (tag_name) @closing)) @container
+  (start_tag
+    "<" @opening.0
+    (tag_name) @opening.1
+    ">" @opening.2)
+  (end_tag
+    "</" @closing.0
+    (tag_name) @closing.1
+    ">" @closing.2)) @container
 
 (script_element
-  (start_tag (tag_name) @opening)
-  (end_tag (tag_name) @closing)) @container
+  (start_tag
+    "<" @opening.0
+    (tag_name) @opening.1
+    ">" @opening.2)
+  (end_tag
+    "</" @closing.0
+    (tag_name) @closing.1
+    ">" @closing.2)) @container
