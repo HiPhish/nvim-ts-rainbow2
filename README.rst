@@ -5,6 +5,14 @@
  Rainbow delimiters for Neovim
 ###############################
 
+.. warning::
+
+   This plugin is deprecated! Please use `rainbow-delimiters.nvim`_ instead
+   (`GitHub mirror`_).  This plugin is implemented as a module for
+   `nvim-treesitter`_, but nvim-treesitter has deprecated the module feature.
+   Hence why I have created a new standalone plugin which does not depend on
+   nvim-treesitter.
+
 This Neovim plugin provides alternating syntax highlighting (“rainbow
 parentheses”) for Neovim, powered by `Tree-sitter`_.  The goal is to have a
 hackable plugin which allows for different configuration of queries and
@@ -137,3 +145,5 @@ Huge thanks to @vigoux, @theHamsta, @sogaiu, @bfredl and @sunjon and
 .. _LICENSE: LICENSE
 .. _manual: doc/ts-rainbow.txt
 .. _neovim/neovim#17099: https://github.com/neovim/neovim/pull/17099
+.. _rainbow-delimiters.nvim: https://gitlab.com/HiPhish/rainbow-delimiters.nvim
+.. _GitHub mirror: https://github.com/hiphish/rainbow-delimiters.nvim
