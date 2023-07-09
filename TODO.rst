@@ -29,7 +29,6 @@ queries.  Contributions are welcome.
 - gdscript
 - graphql
 - haskell
-- hcl
 - julia
 - kotlin
 - meson

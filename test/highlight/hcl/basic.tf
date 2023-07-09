@@ -29,3 +29,5 @@ resource "provider_grant" "usage_grants" {
   privilege = each.key
   roles     = [provider_role.role2.name]
 }
+
+# vim:ft=hcl

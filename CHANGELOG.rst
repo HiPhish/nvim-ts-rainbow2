@@ -19,6 +19,7 @@ Added
 - Missing patterns for C#
 - Missing patterns for Typescript
 - Support for CUDA (`cu`)
+- Support for HCL (`hcl`)
 - Support for Jsonnet (`jsonnet`)
 
 
