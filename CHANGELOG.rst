@@ -9,8 +9,11 @@ is based on `Keep a Changelog`_ and this project adheres to `Semantic
 Versioning`_.
 
 
-Unreleased
-##########
+[2.3.0] - 2023-07-12
+####################
+
+This is the last planned feature release.  Please see the README_ file for an
+explanation.
 
 Added
 =====
@@ -111,3 +114,4 @@ Initial release of the new fork from the original.
 .. ----------------------------------------------------------------------------
 .. _Keep a Changelog: https://keepachangelog.com/en/1.0.0/,
 .. _Semantic Versioning: https://semver.org/spec/v2.0.0.html
+.. _README: README.rst

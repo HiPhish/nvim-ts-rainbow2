@@ -10,7 +10,19 @@
 
 Author: Alejandro "HiPhish" Sanchez
 License: Apache-2.0
-Version: 2.2.0
+Version: 2.3.0
+
+WARNING
+
+This plugin is deprecated! Please use rainbow-delimiters.nvim instead.  This
+plugin is implemented as a module for |nvim-treesitter|, but nvim-treesitter
+has deprecated the module feature. Hence why I have created a new standalone
+plugin which does not depend on nvim-treesitter.
+
+Main repository for rainbow-delimiters.nvim:
+  https://gitlab.com/HiPhish/rainbow-delimiters.nvim
+GitHub mirror repositor:
+  https://github.com/hiphish/rainbow-delimiters.nvim
 
 
 ==============================================================================
