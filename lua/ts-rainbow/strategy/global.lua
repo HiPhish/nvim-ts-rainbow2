@@ -60,8 +60,13 @@ local function update_range(bufnr, changes, tree, lang)
 				local name = query.captures[id]
 				if name == 'container' then
 					match_record.container = node
+				elseif match_record[name] then
+					match_record[name]:push(node)
 				else
-					if match_record[name] then match_record[name]:push(node) end
+					local match_name = name:match("^(.*)%..*")
+					if match_name and match_record[match_name] then
+						match_record[match_name]:push(node)
+					end
 				end
 			end
 
