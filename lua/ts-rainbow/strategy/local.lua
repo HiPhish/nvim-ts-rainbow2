@@ -165,7 +165,7 @@ end
 
 ---Sets up all the callbacks and performs an initial highlighting
 local function setup_parser(bufnr, parser)
-	parser:for_each_child(function(p, lang)
+	parser:children(function(p, lang)
 		-- Skip languages which are not supported, otherwise we get a
 		-- nil-reference error
 		if not lib.get_query(lang) then return end
@@ -204,7 +204,7 @@ function M.on_attach(bufnr, settings)
 		buffer = bufnr,
 		callback = function(args)
 			lib.clear_namespace(bufnr, parser:lang())
-			parser:for_each_child(function(_, lang)
+			parser:children(function(_, lang)
 				lib.clear_namespace(bufnr, lang)
 			end)
 			local_rainbow(args.buf, parser)
