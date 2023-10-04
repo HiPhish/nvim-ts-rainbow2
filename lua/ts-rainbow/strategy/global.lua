@@ -95,7 +95,7 @@ end
 
 ---Sets up all the callbacks and performs an initial highlighting
 local function setup_parser(bufnr, parser)
-	parser:for_each_child(function(p, lang)
+	parser:children(function(p, lang)
 		-- Skip languages which are not supported, otherwise we get a
 		-- nil-reference error
 		if not lib.get_query(lang) then return end
